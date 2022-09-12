@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trabalho M1</title>
+        <link rel="manifest" crossorigin="use-credentials" href="manifest.json"/>
+        <link rel="stylesheet" href="assets/styles/bootstrap.css">
+        <script type="text/javascript" src="assets/scripts/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/scripts/script.js" defer></script>
+    </head>
+    <body>
+        <page-title>Bloco De Notas</page-title>
+
+        <div class="m-auto mt-5 mb-4 w-50" style="height: 50px">
+            <button type="button" id="abrirModal" class="btn btn-primary w-100 h-100" data-bs-toggle="modal" data-bs-target="#modalAnotacao">Adicionar Anotação</button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table align-middle w-75 m-auto">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Ações</th>
+                </tr>
+                </thead>
+                <tbody id="listaAnotacoes"></tbody>
+            </table>
+        </div>
+
+        <!-- Modal Anotação -->
+        <div class="modal fade" id="modalAnotacao" tabindex="-1" aria-labelledby="anotacaoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="anotacaoModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formAnotacao">
+                            <div class="row g-2">
+                                <div>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingTitleInput" placeholder="Título da anotação">
+                                        <label for="floatingTitleInput">Título: </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="floatingTextarea" placeholder="Sua anotação vai aqui..." style="height: 100px"></textarea>
+                                        <label for="floatingTextarea">Anotação: </label>
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-primary" id="pegarLocalizacao">Pegar Localização</button>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingLatitudeInput" placeholder="Título da anotação">
+                                        <label for="floatingLatitudeInput">Latitude: </label>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingLongitudeInput" placeholder="Título da anotação">
+                                        <label for="floatingLongitudeInput">Longitude: </label>
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <a class="btn btn-primary" role="button" id="verLocalizacao" target="_blank">Ver Localização</a>
+                                </div>
+                                <div class="d-grid gap-2" id="botoesAcoesModal">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-success">Salvar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
