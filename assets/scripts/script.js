@@ -44,7 +44,7 @@ customElements.define('page-title', PageTitle)
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
         navigator.serviceWorker
-            .register("/serviceWorker.js")
+            .register("/bloco-de-notas/serviceWorker.js")
             .then(res => console.log("service worker registered"))
             .catch(err => console.log("service worker not registered", err))
     })
